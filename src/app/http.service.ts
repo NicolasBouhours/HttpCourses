@@ -14,6 +14,11 @@ export class HttpService {
       .map((response: Response) => response.json());
   }
 
+  getOwnData() {
+    return this.http.get('https://angular2-course-88a18.firebaseio.com/data.json')
+      .map((response: Response) => response.json());
+  }
+
   sendData(user: any) {
     const body = JSON.stringify(user);
     const headers = new Headers();
