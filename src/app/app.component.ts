@@ -8,7 +8,8 @@ import { HttpService } from './http.service';
 })
 export class AppComponent implements OnInit {
   items: any[] = [];
-  
+  asyncString = this.httpService.getData();
+
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
         data => {
           const myArray = [];         
           for (let key in data) {
-            myArray.push(data[key]);
+            myArray.push(data[key ]);
           }
           this.items = myArray;  
         }
