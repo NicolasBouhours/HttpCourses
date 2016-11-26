@@ -1,6 +1,5 @@
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
-import { Response } from '@angular/Http';
 import { HttpService } from './http.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.httpService.getData().subscribe(
-      (data: Response) => console.log(data)
+      (data: any) => console.log(data)
     );
   }
 }
